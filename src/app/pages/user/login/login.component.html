@@ -17,15 +17,22 @@
           </div>
         </div>
         <span class="p-float-label mb-3">
-          <input id="email" type="email" class="form-control" pInputText />
+          <input
+            pInputText
+            id="email"
+            type="email"
+            class="form-control"
+            formControlName="email"
+          />
           <label for="email">E-mail</label>
         </span>
         <span class="p-float-label mb-3">
           <input
+            pInputText
             id="password"
             type="password"
             class="form-control"
-            pInputText
+            formControlName="password"
           />
           <label for="password">Mot de passe</label>
         </span>
@@ -51,8 +58,7 @@
             pButton
             type="button"
             label="Créer un compte"
-            (click)="login()"
-            class="btn btn-custom m-2"
+            class="btn btn-custom grey-bg m-2"
           ></button>
           <button
             pButton
@@ -60,7 +66,7 @@
             label="Connexion"
             [loading]="loading"
             [disabled]="!loginForm.valid"
-            class="btn btn-custom m-2"
+            class="btn btn-custom primary-bg m-2"
           ></button>
         </div>
       </form>

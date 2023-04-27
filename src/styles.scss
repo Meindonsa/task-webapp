@@ -1,9 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-.primary-colo{
-    color: #8C034E;
+:root {
+  --primary: #8c034e;
+  --mustard: #f29f05;
+  --orange: #d95204;
+  --light: #d9d9d9;
+  --blue: #03318c;
+  --dark: #000;
 }
-.primary-bg{
-    #8C034E
+.primary-colo {
+  color: var(--primary);
+}
+.primary-bg {
+  background-color: var(--primary);
+}
+.grey-bg {
+  background-color: var(--light);
+}
+
+button.btn-custom {
+  height: 40px;
+  border-radius: 2px;
+}
+
+button.primary-bg {
+  border: none;
+  background-color: var(--primary) !important;
+}
+
+button.primary-bg:disabled {
+  color: var(--light);
+  background-color: var(--primary) !important;
+}
+
+button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+button.grey-bg {
+  color: var(--primary);
+  background-color: var(--light);
+  border: none;
+}
+
+button.grey-bg:hover {
+  color: var(--primary) !important;
+  background-color: var(--light) !important;
+  border: none;
+}
+
+//INPUTS
+.p-inputtext:enabled:focus {
+  box-shadow: none !important;
 }
