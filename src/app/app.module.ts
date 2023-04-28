@@ -11,6 +11,7 @@ import { ResetPasswordComponent } from './pages/user/reset-password/reset-passwo
 import { TwoFactorComponent } from './pages/user/two-factor/two-factor.component';
 import { PrimeNgModule } from './module/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
