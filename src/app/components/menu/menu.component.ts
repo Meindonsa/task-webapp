@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class MenuComponent implements OnInit {
   items: MegaMenuItem[];
 
   constructor() {

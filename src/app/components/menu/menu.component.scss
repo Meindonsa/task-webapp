@@ -1,0 +1,10 @@
+ul.list-group {
+  li.active {
+    background-color: var(--primary);
+    border: none;
+  }
+  li.disabled {
+    font-size: 12px;
+    color: var(--primary);
+  }
+}

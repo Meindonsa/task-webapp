@@ -1,7 +1,10 @@
 ul.nav-pills {
   li.nav-item {
     a {
-      color: var(--dark);
+      color: var(--primary);
+    }
+    a.active {
+      color: var(--mustard);
     }
   }
 }

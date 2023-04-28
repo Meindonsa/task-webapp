@@ -12,6 +12,7 @@ import { TwoFactorComponent } from './pages/user/two-factor/two-factor.component
 import { PrimeNgModule } from './module/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MessageService } from 'primeng/api';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [MessageService],
+  providers: [MessageService, DialogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

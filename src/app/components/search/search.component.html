@@ -1,0 +1,45 @@
+<div class="container pt-3">
+  <div class="input-group mb-3">
+    <span class="input-group-text"><em class="pi pi-search"></em></span>
+    <input
+      type="search"
+      [(ngModel)]="search"
+      class="form-control"
+      placeholder="Recherche"
+    />
+  </div>
+  <div class="w-100">
+    <div class="tasks">
+      <div class="simpleTask">
+        Tâches
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action">
+            <em class="pi pi-check-square"></em> An item
+          </li>
+          <li class="list-group-item list-group-item-action">A second item</li>
+          <li class="list-group-item list-group-item-action">A third item</li>
+          <li class="list-group-item list-group-item-action">A fourth item</li>
+          <li class="list-group-item list-group-item-action">
+            And a fifth one
+          </li>
+        </ul>
+      </div>
+      <div class="folderTask mt-4">
+        Groupe de tâches
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-action">An item</li>
+          <li class="list-group-item list-group-item-action">A second item</li>
+          <li class="list-group-item list-group-item-action">A third item</li>
+          <li class="list-group-item list-group-item-action">A fourth item</li>
+          <li class="list-group-item list-group-item-action">
+            And a fifth one
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="notes">
+      <div class="simpleNote"></div>
+      <div class="folderNote"></div>
+    </div>
+  </div>
+</div>

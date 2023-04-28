@@ -54,3 +54,9 @@ button.grey-bg:hover {
 .p-inputtext:enabled:focus {
   box-shadow: none !important;
 }
+
+// Layout
+app-sidebar.col-light-menu {
+  max-width: 50px !important;
+  background-color: #ededed;
+}

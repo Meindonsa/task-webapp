@@ -1,0 +1,19 @@
+span.input-group-text {
+  background-color: transparent;
+  border-right: none;
+}
+input {
+  border-left: none;
+}
+input:focus {
+  box-shadow: none;
+}
+
+ul.list-group {
+  li {
+    font-size: 14px;
+    em {
+      font-size: 12px;
+    }
+  }
+}

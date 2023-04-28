@@ -1,20 +1,28 @@
-<div
-  class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
->
+<div class="vh-100">
   <a routerLink="/dashboard" class="d-block p-3 link-dark text-decoration-none">
     <i class="bi-bootstrap fs-1"></i>
   </a>
   <ul
-    class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center"
+    class="nav nav-pills nav-flush flex-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center"
   >
-    <li class="nav-item" *ngFor="let item of menus">
-      <a routerLink="/{{ item.path }}" class="nav-link py-3 px-2">
-        <i class="{{ item.icon }} fs-3"></i>
+    <li class="nav-item">
+      <a routerLink="/dashboard" class="nav-link py-3 px-2">
+        <i class="pi pi-home fs-6"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link py-3 px-2" (click)="openSearch()">
+        <i class="pi pi-search fs-6"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link py-3 px-2" (click)="openAddAnnotation()">
+        <i class="pi pi-plus fs-6"></i>
       </a>
     </li>
   </ul>
   <hr />
-  <div class="dropdown pb-4">
+  <div class="dropdown pb-4 mt-auto">
     <a
       href="#"
       class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle"

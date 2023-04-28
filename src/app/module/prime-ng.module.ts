@@ -5,14 +5,20 @@ import { ToastModule } from 'primeng/toast';
 import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
 import { MegaMenuModule } from 'primeng/megamenu';
+import { AccordionModule } from 'primeng/accordion';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogModule } from 'primeng/dialog';
 @NgModule({
   exports: [
-    InputTextModule,
-    ButtonModule,
-    ToastModule,
     MenuModule,
+    ToastModule,
+    ButtonModule,
+    DialogModule,
     MenubarModule,
     MegaMenuModule,
+    InputTextModule,
+    AccordionModule,
+    DynamicDialogModule,
   ],
 })
 export class PrimeNgModule {}

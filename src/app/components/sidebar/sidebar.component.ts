@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,31 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  menus: any = [];
-  constructor() {}
+  ref: DynamicDialogRef | undefined;
+  constructor(
+    private dialogService: DialogService,
+    private messageService: MessageService
+  ) {}
 
-  ngOnInit(): void {
-    this.menus = [
-      {
-        icon: 'pi pi-home',
-        label: 'Home',
-        path: '/dashboard',
-      },
-      {
-        icon: 'pi pi-user',
-        label: 'Utilisateur',
-        path: '/user',
-      },
-      {
-        icon: 'pi pi-home',
-        label: 'Home',
-        path: '/dashboard',
-      },
-      {
-        icon: 'pi pi-home',
-        label: 'Home',
-        path: '/dashboard',
-      },
-    ];
+  ngOnInit(): void {}
+
+  openSearch() {
+    this.ref = this.dialogService.open(SearchComponent, {
+      width: '70%',
+      draggable: true,
+      dismissableMask: true,
+    });
   }
+
+  openAddAnnotation() {}
 }
