@@ -1,9 +1,11 @@
-span.input-group-text {
-  background-color: transparent;
-  border-right: none;
-}
-input {
-  border-left: none;
+div.search-container {
+  span.input-group-text {
+    background-color: transparent;
+    border-right: none;
+  }
+  input {
+    border-left: none;
+  }
 }
 input:focus {
   box-shadow: none;

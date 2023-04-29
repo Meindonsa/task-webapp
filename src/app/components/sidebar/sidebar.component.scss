@@ -6,5 +6,8 @@ ul.nav-pills {
     a.active {
       color: var(--mustard);
     }
+    a:hover {
+      cursor: pointer;
+    }
   }
 }

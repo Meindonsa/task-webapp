@@ -1,0 +1,48 @@
+<div class="form">
+  <div class="row">
+    <div class="col-12 mb-4">
+      <label>Tâche</label>
+      <input type="text" class="form-control" placeholder="Titre de la tâche" />
+    </div>
+    <div class="col-12 mb-4">
+      <label>Ajouter à un dossier</label>
+      <select class="form-select" size="3" aria-label="size 3 select example">
+        <option selected>aucun</option>
+        <option *ngFor="let group of taskGroup" [value]="group">
+          {{ group.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-12 mb-4">
+      <label>Description</label>
+      <p-editor [style]="{ height: '200px' }">
+        <ng-template pTemplate="header">
+          <span class="ql-formats">
+            <button type="button" class="ql-bold" aria-label="Bold"></button>
+            <button
+              type="button"
+              class="ql-italic"
+              aria-label="Italic"
+            ></button>
+            <button
+              type="button"
+              class="ql-underline"
+              aria-label="Underline"
+            ></button>
+          </span>
+        </ng-template>
+      </p-editor>
+    </div>
+    <div class="d-grid gap-2 col-6 ms-auto">
+      <button
+        pButton
+        class="btn p-button btn-sm btn-custom primary-bg"
+        type="button"
+        [loading]="loading"
+        (click)="create()"
+        label="Créer"
+      ></button>
+    </div>
+  </div>
+</div>

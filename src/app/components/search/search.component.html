@@ -1,5 +1,5 @@
 <div class="container pt-3">
-  <div class="input-group mb-3">
+  <div class="input-group mb-3 search-container">
     <span class="input-group-text"><em class="pi pi-search"></em></span>
     <input
       type="search"
@@ -9,37 +9,73 @@
     />
   </div>
   <div class="w-100">
-    <div class="tasks">
-      <div class="simpleTask">
-        Tâches
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item list-group-item-action">
-            <em class="pi pi-check-square"></em> An item
-          </li>
-          <li class="list-group-item list-group-item-action">A second item</li>
-          <li class="list-group-item list-group-item-action">A third item</li>
-          <li class="list-group-item list-group-item-action">A fourth item</li>
-          <li class="list-group-item list-group-item-action">
-            And a fifth one
-          </li>
-        </ul>
-      </div>
-      <div class="folderTask mt-4">
-        Groupe de tâches
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item list-group-item-action">An item</li>
-          <li class="list-group-item list-group-item-action">A second item</li>
-          <li class="list-group-item list-group-item-action">A third item</li>
-          <li class="list-group-item list-group-item-action">A fourth item</li>
-          <li class="list-group-item list-group-item-action">
-            And a fifth one
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="notes">
-      <div class="simpleNote"></div>
-      <div class="folderNote"></div>
-    </div>
+    <p-tabView>
+      <p-tabPanel header="Tâches">
+        <div class="tasks">
+          <div class="simpleTask">
+            <span class="primary-colo fw-bold">Tâches</span>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item list-group-item-action"
+                *ngFor="let task of tasks"
+              >
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="{{ task.annotationNumber }}"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="{{ task.annotationNumber }}"
+                  >
+                    {{ task.label }}
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="folderTask mt-4">
+            <span class="primary-colo fw-bold">Groupe de tâches</span>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item list-group-item-action"
+                *ngFor="let group of tasksGroup"
+              >
+                <em class="pi pi-folder"></em> {{ group.name }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Notes">
+        <div class="notes">
+          <div class="simpleNote">
+            <span class="primary-colo fw-bold">Notes</span>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item list-group-item-action"
+                *ngFor="let note of notes"
+              >
+                <em class="pi pi-file"></em> {{ note.label }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="folderNote">
+            <span class="primary-colo fw-bold">Groupe de notes</span>
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item list-group-item-action"
+                *ngFor="let group of notesGroup"
+              >
+                <em class="pi pi-folder"></em> {{ group.name }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
   </div>
 </div>

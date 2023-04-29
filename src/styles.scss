@@ -5,6 +5,7 @@
   --primary: #8c034e;
   --mustard: #f29f05;
   --orange: #d95204;
+  --white: #f1f1f1;
   --light: #d9d9d9;
   --blue: #03318c;
   --dark: #000;
@@ -18,6 +19,16 @@
 .grey-bg {
   background-color: var(--light);
 }
+// SCROLLBAR
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
 
 button.btn-custom {
   height: 40px;
@@ -26,7 +37,11 @@ button.btn-custom {
 
 button.primary-bg {
   border: none;
+  color: var(--white);
   background-color: var(--primary) !important;
+}
+button.primary-bg:hover {
+  color: var(--white);
 }
 
 button.primary-bg:disabled {

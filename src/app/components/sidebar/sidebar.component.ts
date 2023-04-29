@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { SearchComponent } from '../search/search.component';
+import { NewAnnotationComponent } from '../new-annotation/new-annotation.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -25,5 +26,11 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  openAddAnnotation() {}
+  openAddAnnotation() {
+    this.ref = this.dialogService.open(NewAnnotationComponent, {
+      header: "Choix de l'annotation",
+      width: '50%',
+      dismissableMask: true,
+    });
+  }
 }
