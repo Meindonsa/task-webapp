@@ -7,8 +7,11 @@ import { AnnotationService } from 'src/app/services/tasks/annotation.service';
   styleUrls: ['./tasks.component.scss'],
 })
 export class TasksComponent implements OnInit {
+  title: string = 'Tout';
   tasksGroup: any = [];
+  groupSelected: any;
   tasks: any = [];
+  annotation: any;
 
   constructor(private annotationService: AnnotationService) {}
 
@@ -18,5 +21,15 @@ export class TasksComponent implements OnInit {
   retrieveData() {
     this.tasks = this.annotationService.retrieveTasks().slice(0, 5);
     this.tasksGroup = this.annotationService.retrieveTasksGroup();
+  }
+
+  displayTasks(group: any) {
+    this.title = group.name;
+    this.tasks = group.annotations;
+    this.groupSelected = group;
+  }
+
+  checkTask(annotation: any) {
+    this.annotation = annotation;
   }
 }

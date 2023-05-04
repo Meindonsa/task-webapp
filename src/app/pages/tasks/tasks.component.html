@@ -1,48 +1,45 @@
 <div class="row">
-  <div class="col-md-6 border-end">
+  <div class="col-6 border-end centerSide pt-3">
     <div class="row">
-      <div class="col-12 w-100 groupContainer">
-        <a class="groupContainerItem" *ngFor="let group of tasksGroup">
+      <div class="col-12 groupContainer">
+        <a
+          class="groupContainerItem"
+          *ngFor="let group of tasksGroup"
+          (click)="displayTasks(group)"
+        >
           <div><em class="pi pi-folder"></em> {{ group.name }}</div>
           <div class="indicator">
             <div class="percentage" style="width: 50%"></div>
           </div>
         </a>
       </div>
-      <div class="simpleTask">
-        <span class="primary-colo fw-bold">Tâches</span>
+      <div class="simpleTask mt-3">
+        <div class="d-flex justify-content-between">
+          <span class="primary-colo fw-bold">{{ title }}</span>
+          <em
+            class="pi pi-cog primary-color pointer"
+            *ngIf="groupSelected"
+          ></em>
+        </div>
         <ul class="list-group list-group-flush">
           <li
             class="list-group-item list-group-item-action"
             *ngFor="let task of tasks"
           >
             <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="{{ task.annotationNumber }}"
-              />
-              <label class="form-check-label" for="{{ task.annotationNumber }}">
-                {{ task.label }}
+              <input class="form-check-input" type="checkbox" />
+              <label class="form-check-label">
+                <span class="pointer" (click)="checkTask(task)">{{
+                  task.label
+                }}</span>
               </label>
             </div>
           </li>
         </ul>
       </div>
-      <div class="col-12 mb-3">
-        <div class="folderTask mt-4">
-          <span class="primary-colo fw-bold">Groupe de tâches</span>
-          <ul class="list-group list-group-flush">
-            <li
-              class="list-group-item list-group-item-action"
-              *ngFor="let group of tasksGroup"
-            >
-              <em class="pi pi-folder"></em> {{ group.name }}
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="col-md-6">Detais Task</div>
+  <div class="col-6">
+    <app-task-detail [data]="annotation"></app-task-detail>
+  </div>
 </div>

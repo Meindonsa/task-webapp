@@ -10,7 +10,7 @@
   --blue: #03318c;
   --dark: #000;
 }
-.primary-colo {
+.primary-color {
   color: var(--primary);
 }
 .primary-bg {
@@ -75,4 +75,25 @@ button.grey-bg:hover {
 app-sidebar.col-light-menu {
   max-width: 50px !important;
   background-color: #ededed;
+}
+
+// NO FOCUS ON INPUTS
+input:focus {
+  box-shadow: none !important;
+}
+
+// LIST TASKS
+div.simpleTask {
+  ul.list-group {
+    li {
+      font-size: 14px;
+      em {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
 }

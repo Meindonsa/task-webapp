@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
   retrieveData() {
     this.tasks = this.annotationService.retrieveTasks().slice(0, 5);
     this.notes = this.annotationService.retrieveNotes().slice(0, 5);
-    this.notesGroup = this.annotationService.retrieveNotesGroup().slice(0, 5);
-    this.tasksGroup = this.annotationService.retrieveTasksGroup().slice(0, 5);
+    this.notesGroup = this.annotationService.retrieveNotesGroup().slice(0, 4);
+    this.tasksGroup = this.annotationService.retrieveTasksGroup().slice(0, 4);
   }
 }

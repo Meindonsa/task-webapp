@@ -1,0 +1,14 @@
+<div
+  class="h-100 w-100 d-flex justify-content-center align-items-center"
+  *ngIf="!data"
+>
+  Annotation
+</div>
+<div *ngIf="data" class="mt-3 px-3">
+  <input
+    type="text"
+    [(ngModel)]="title"
+    value="{{ data.label }}"
+    class="form-control annotationTitle"
+  />
+</div>

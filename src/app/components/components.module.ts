@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { NoteFormComponent } from './note-form/note-form.component';
 import { FolderFormComponent } from './folder-form/folder-form.component';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FolderFormComponent } from './folder-form/folder-form.component';
     TaskFormComponent,
     NoteFormComponent,
     FolderFormComponent,
+    TaskDetailComponent,
   ],
   exports: [
     SidebarComponent,
@@ -28,6 +30,7 @@ import { FolderFormComponent } from './folder-form/folder-form.component';
     TaskFormComponent,
     NoteFormComponent,
     FolderFormComponent,
+    TaskDetailComponent,
   ],
   imports: [CommonModule, PrimeNgModule, ReactiveFormsModule, FormsModule],
 })

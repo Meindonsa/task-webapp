@@ -33,4 +33,6 @@ export class SidebarComponent implements OnInit {
       dismissableMask: true,
     });
   }
+
+  openTrash() {}
 }
