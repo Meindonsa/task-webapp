@@ -100,6 +100,18 @@ export class AnnotationService {
       status: FolderStatus.CREATE,
     },
     {
+      folderNumber: 'a0iN3x',
+      name: 'Loving',
+      type: Folder.TASK_GROUP,
+      status: FolderStatus.CREATE,
+    },
+    {
+      folderNumber: 'f0iB3R',
+      name: 'Préférée',
+      type: Folder.TASK_GROUP,
+      status: FolderStatus.CREATE,
+    },
+    {
       folderNumber: 'f0iB3R',
       name: 'Cours',
       type: Folder.NOTE_GROUP,
