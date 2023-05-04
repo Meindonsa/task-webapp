@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnnotationService } from 'src/app/services/tasks/annotation.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
+  tasksGroup: any = [];
+  notesGroup: any = [];
+  tasks: any = [];
+  notes: any = [];
+  search: any;
 
-  ngOnInit(): void {}
+  constructor(private annotationService: AnnotationService) {}
+
+  ngOnInit(): void {
+    this.retrieveData();
+  }
 
   toggle() {}
+
+  retrieveData() {
+    this.tasks = this.annotationService.retrieveTasks().slice(0, 5);
+    this.notes = this.annotationService.retrieveNotes().slice(0, 5);
+    this.notesGroup = this.annotationService.retrieveNotesGroup().slice(0, 5);
+    this.tasksGroup = this.annotationService.retrieveTasksGroup().slice(0, 5);
+  }
 }

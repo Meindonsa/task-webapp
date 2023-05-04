@@ -1,0 +1,49 @@
+div.groupContainer {
+  width: 500px !important;
+  height: 50px;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  a.groupContainerItem {
+    width: 120px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: auto 3px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary);
+    background-color: var(--light);
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+
+    div.indicator {
+      width: 100%;
+      height: 1px;
+      display: flex;
+      align-items: center;
+      background-color: var(--white);
+
+      div.percentage {
+        height: 1px;
+        background-color: var(--primary);
+      }
+    }
+  }
+
+  //   &::-webkit-scrollbar {
+  //     width: 2px;
+  //     height: 2px;
+  //   }
+  //   &::-webkit-scrollbar-track {
+  //     background: #f1f1f1;
+  //   }
+  //   &::-webkit-scrollbar-thumb {
+  //     background: var(--primary);
+  //   }
+}
