@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnnotationService } from 'src/app/services/tasks/annotation.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tasks',
@@ -7,29 +7,16 @@ import { AnnotationService } from 'src/app/services/tasks/annotation.service';
   styleUrls: ['./tasks.component.scss'],
 })
 export class TasksComponent implements OnInit {
-  title: string = 'Tout';
-  tasksGroup: any = [];
-  groupSelected: any;
-  tasks: any = [];
-  annotation: any;
+  group: any;
 
-  constructor(private annotationService: AnnotationService) {}
+  constructor(private location: Location) {}
 
   ngOnInit(): void {
-    this.retrieveData();
+    const state = history.state;
+    this.group = state['folder'];
+    console.log(this.group);
   }
-  retrieveData() {
-    this.tasks = this.annotationService.retrieveTasks().slice(0, 5);
-    this.tasksGroup = this.annotationService.retrieveTasksGroup();
-  }
-
-  displayTasks(group: any) {
-    this.title = group.name;
-    this.tasks = group.annotations;
-    this.groupSelected = group;
-  }
-
-  checkTask(annotation: any) {
-    this.annotation = annotation;
+  back(): void {
+    this.location.back();
   }
 }

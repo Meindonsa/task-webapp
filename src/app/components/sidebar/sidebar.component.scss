@@ -1,13 +1,15 @@
 ul.nav-pills {
   li.nav-item {
     a {
-      color: var(--primary);
+      color: var(--light);
     }
     a.active {
-      color: var(--mustard);
+      color: var(--primary);
+      background-color: transparent !important;
     }
     a:hover {
       cursor: pointer;
+      color: #616161;
     }
   }
 }

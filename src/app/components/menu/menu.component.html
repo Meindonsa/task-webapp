@@ -2,34 +2,43 @@
   <ul class="list-group list-group-flush">
     <li
       class="list-group-item list-group-item-action d-flex align-items-center"
-      routerLink="/dashboard"
+      routerLink="/groups/all"
       routerLinkActive="active"
+      (click)="putUrl('all')"
     >
       <em class="pi pi-align-justify me-2"></em> Tout
     </li>
-    <li class="list-group-item disabled mt-3">Tâches</li>
     <li
       class="list-group-item list-group-item-action d-flex align-items-center"
-      routerLink="/tasks"
+      routerLink="/groups/recent"
       routerLinkActive="active"
+      (click)="putUrl('recent')"
     >
-      <em class="pi pi-check-circle me-2"></em> Toutes les tâches
+      <em class="pi pi-clock me-2"></em>Récents
     </li>
     <li
       class="list-group-item list-group-item-action d-flex align-items-center"
+      routerLink="/groups/important"
+      routerLinkActive="active"
+      (click)="putUrl('important')"
     >
-      <em class="pi pi-clock me-2"></em> Aujourd'hui
+      <em class="pi pi-star me-2"></em> Important
     </li>
     <li
       class="list-group-item list-group-item-action d-flex align-items-center"
+      routerLink="/groups/archived"
+      routerLinkActive="active"
+      (click)="putUrl('archived')"
     >
-      <em class="pi pi-calendar me-2"></em> Cette semaine
+      <em class="pi pi-folder-open me-2"></em> Archivé
     </li>
-    <li class="list-group-item disabled mt-3">Notes</li>
     <li
       class="list-group-item list-group-item-action d-flex align-items-center"
+      routerLink="/groups/deleted"
+      routerLinkActive="active"
+      (click)="putUrl('deleted')"
     >
-      <em class="pi pi-file-edit me-2"></em> Mes notes
+      <em class="pi pi-trash me-2"></em> Supprimés
     </li>
   </ul>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
 
 @Component({
@@ -7,16 +7,13 @@ import { MegaMenuItem } from 'primeng/api';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  items: MegaMenuItem[];
+  @Output('outputUrl') outputUrl = new EventEmitter<any>();
 
-  constructor() {
-    this.items = [
-      {
-        label: 'File',
-        icon: 'pi pi-fw pi-file',
-      },
-    ];
-  }
+  constructor() {}
 
   ngOnInit(): void {}
+
+  putUrl(link: any) {
+    this.outputUrl.emit(link);
+  }
 }

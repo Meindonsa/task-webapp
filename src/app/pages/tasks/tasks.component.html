@@ -1,45 +1,25 @@
-<div class="row">
-  <div class="col-6 border-end centerSide pt-3">
-    <div class="row">
-      <div class="col-12 groupContainer">
-        <a
-          class="groupContainerItem"
-          *ngFor="let group of tasksGroup"
-          (click)="displayTasks(group)"
-        >
-          <div><em class="pi pi-folder"></em> {{ group.name }}</div>
-          <div class="indicator">
-            <div class="percentage" style="width: 50%"></div>
-          </div>
-        </a>
-      </div>
-      <div class="simpleTask mt-3">
-        <div class="d-flex justify-content-between">
-          <span class="primary-colo fw-bold">{{ title }}</span>
-          <em
-            class="pi pi-cog primary-color pointer"
-            *ngIf="groupSelected"
-          ></em>
+<p-splitter [style]="{ height: '100%', border: 'none' }">
+  <ng-template pTemplate>
+    <div class="conatiner w-100 pt-5">
+      <div class="head">
+        <div class="right pointer" (click)="back()">
+          <span class="pointer">
+            <em class="pi pi-arrow-left"></em>
+          </span>
+          <h4>{{ group.name }}</h4>
         </div>
+        <div class="left"></div>
+      </div>
+      <div class="content">
         <ul class="list-group list-group-flush">
-          <li
-            class="list-group-item list-group-item-action"
-            *ngFor="let task of tasks"
-          >
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" />
-              <label class="form-check-label">
-                <span class="pointer" (click)="checkTask(task)">{{
-                  task.label
-                }}</span>
-              </label>
-            </div>
-          </li>
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+          <li class="list-group-item">A fourth item</li>
+          <li class="list-group-item">And a fifth one</li>
         </ul>
       </div>
     </div>
-  </div>
-  <div class="col-6">
-    <app-task-detail [data]="annotation"></app-task-detail>
-  </div>
-</div>
+  </ng-template>
+  <!-- <ng-template pTemplate> </ng-template> -->
+</p-splitter>

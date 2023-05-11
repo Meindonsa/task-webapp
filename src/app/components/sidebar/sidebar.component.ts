@@ -3,6 +3,7 @@ import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { SearchComponent } from '../search/search.component';
 import { NewAnnotationComponent } from '../new-annotation/new-annotation.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,12 +12,18 @@ import { NewAnnotationComponent } from '../new-annotation/new-annotation.compone
 })
 export class SidebarComponent implements OnInit {
   ref: DynamicDialogRef | undefined;
+
   constructor(
+    private router: Router,
     private dialogService: DialogService,
     private messageService: MessageService
   ) {}
 
   ngOnInit(): void {}
+
+  goToGroup() {
+    this.router.navigate(['groups/all']);
+  }
 
   openSearch() {
     this.ref = this.dialogService.open(SearchComponent, {
